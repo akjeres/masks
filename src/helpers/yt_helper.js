@@ -7,11 +7,11 @@ export default class YT_API {
 
     get_videos_from_list = ( { channel_ID } ) => {
         return fetch(`${ this.endpoint }/search?key=${ key }` +
-            `&channelId=d${ channel_ID }` +
+            `&channelId=${ channel_ID }` +
             `&part=snippet,id` +
             `&type=video` +
             `&order=date` +
-            `&maxResults=20` /*+
+            `&maxResults=18` /*+
          `&pageToken=${ token }`*/
         )
             .then(res => {
