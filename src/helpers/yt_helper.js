@@ -21,8 +21,7 @@ export default class YT_API {
                 return res.json();
             })
             .then(res => {
-                //if ('error' in res) throw new Error(JSON.stringify(res.error));
-                if ('error' in res) return dummy;
+                if ('error' in res) throw new Error(JSON.stringify(res.error));
 
                 return res;
             })
