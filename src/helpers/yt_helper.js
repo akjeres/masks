@@ -6,14 +6,14 @@ export default class YT_API {
         this.endpoint = 'https://www.googleapis.com/youtube/v3';
     }
 
-    get_videos_from_list = ( { channel_ID, pageToken } ) => {
+    get_videos_from_list = ( { channel_ID, pageToken, results = 18 } ) => {
         const suffix = pageToken ? `&pageToken=${ pageToken }` : '';
         const request = `${ this.endpoint }/search?key=${ key }` +
             `&channelId=${ channel_ID }` +
             `&part=snippet,id` +
             `&type=video` +
             `&order=date` +
-            `&maxResults=18` +
+            `&maxResults=${ results }` +
             suffix;
 
         return fetch(request)

@@ -7,12 +7,14 @@ export default class Pagination extends React.Component {
             page,
             pageToken,
             next_page,
+            total,
+            results,
             increasePage,
             decreasePage,
         } = this.props;
         const prev_button_condition = prev_page && (pageToken !== prev_page);
-        const next_button_condition = next_page && (pageToken !== next_page);
-        console.log('prev_page: ', prev_page, '\n', 'page: ', pageToken, '\n', 'next_page: ', next_page );
+        const next_button_condition = next_page && (total === results);
+        console.log('next_button_condition: ', next_button_condition );
         const extra_className = (condition) => condition ? '' : 'disabled';
         return (
             <div className="pagination_wrapper">
