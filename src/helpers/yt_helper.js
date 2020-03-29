@@ -16,6 +16,10 @@ export default class YT_API {
             `&maxResults=${ results }` +
             suffix;
 
+        if ('undefined' !== typeof dummy) {
+            return Promise.resolve(dummy);
+        }
+
         return fetch(request)
             .then(res => {
                 return res.json();
