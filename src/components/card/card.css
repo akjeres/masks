@@ -1,0 +1,8 @@
+.single-card {
+    margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+    .single-card {
+        margin-bottom: 15px;
+    }
+}

@@ -1,0 +1,20 @@
+.header {
+    margin-bottom: 30px;
+}
+.header_navigation {
+    padding: 15px 0;
+}
+.header .navbar-brand {
+    padding: 0;
+}
+.header .navbar-brand img {
+    display: block;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+@media (max-width: 767px) {
+    .header {
+        margin-bottom: 15px;
+    }
+}

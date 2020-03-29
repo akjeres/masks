@@ -1,4 +1,5 @@
 import React from "react";
+import './pagination.css';
 
 export default class Pagination extends React.Component {
     render() {
@@ -17,10 +18,10 @@ export default class Pagination extends React.Component {
         const extra_className = (condition) => condition ? '' : 'disabled';
 
         const result = (
-            <div className="pagination_wrapper">
+            <div className="border border-light border-top pagination_wrapper">
                 <div className="container">
                     <div className="row">
-                        <div className="col-12 ">
+                        <div className="col-12">
                             <nav className="d-flex justify-content-center">
                                 <ul className="pagination">
                                     <li className={`page-item ${ extra_className(prev_button_condition) }`}>

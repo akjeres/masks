@@ -3,10 +3,10 @@ import './App.css';
 
 import YT_API from './helpers/yt_helper';
 
-import Spinner from "./components/spinner";
-import Header from "./components/header";
-import List from "./components/list";
-import Pagination from "./components/pagination";
+import Spinner from "./components/spinner/";
+import Header from "./components/header/";
+import List from "./components/list/";
+import Pagination from "./components/pagination/";
 
 export default class App extends React.Component {
     constructor() {
@@ -26,7 +26,7 @@ export default class App extends React.Component {
         console.log('constructor: ', this.state);
     }
 
-    get_list = (id, pageToken = null, results) => {
+    get_list = (id, pageToken = null, results, search_query = null ) => {
         console.log('id: ', id, '\n', 'pageToken: ', pageToken);
         this.setState({
             is_loading: true,
@@ -35,6 +35,7 @@ export default class App extends React.Component {
             channel_ID: id,
             pageToken: pageToken,
             results: results,
+            search_query: search_query,
         })
             .then(res => {
                 console.log('res: ', res);
